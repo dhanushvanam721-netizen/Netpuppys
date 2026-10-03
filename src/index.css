@@ -1,0 +1,35 @@
+:root {
+  --bg: #fafaf7;
+  --surface: #ffffff;
+  --text: #14161a;
+  --muted: #5d6470;
+  --accent: #e4572e;
+  --accent-2: #2e5bff;
+  --border: rgba(20, 22, 26, 0.1);
+}
+:root[data-theme="dark"] {
+  --bg: #0d0f14;
+  --surface: #161922;
+  --text: #f2f3f5;
+  --muted: #9aa1ad;
+  --border: rgba(255, 255, 255, 0.1);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.4s, color 0.4s;
+  overflow-x: hidden;
+}
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; border: 0; }
+
+/* Hide the native cursor only on devices with a real mouse */
+@media (hover: hover) and (pointer: fine) {
+  body, a, button { cursor: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
